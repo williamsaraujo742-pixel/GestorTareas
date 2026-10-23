@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA 1: LOGIN / REGISTRO -->
+    <!-- ============================================ -->
+    <div id="pantalla-auth" class="pantalla">
+        <div class="auth-container">
+            <div class="auth-sidebar">
+                <h1>Organiza tu vida,<br>una tarea a la vez.</h1>
+                <p>Gestiona tus pendientes de forma simple y eficiente.</p>
+            </div>
+            
+            <div class="auth-form-container">
+                <!-- Formulario de LOGIN -->
+                <form id="form-login" class="form-auth">
+                    <h2>Iniciar Sesión</h2>
+                    <p class="subtitulo">Bienvenido de vuelta</p>
+                    
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="tu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primario">Iniciar Sesión</button>
+                    <p class="cambiar-form">
+                        ¿No tienes cuenta? 
+                        <a href="#" id="link-registro">Regístrate aquí</a>
+                    </p>
+                    <p id="login-error" class="error-msg"></p>
+                </form>
+
+                <!-- Formulario de REGISTRO (oculto por defecto) -->
+                <form id="form-registro" class="form-auth oculto">
+                    <h2>Crear Cuenta</h2>
+                    <p class="subtitulo">Empieza a organizarte</p>
+                    
+                    <div class="form-group">
+                        <label for="registro-nombre">Nombre</label>
+                        <input type="text" id="registro-nombre" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registro-email">Email</label>
+                        <input type="email" id="registro-email" placeholder="tu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registro-password">Contraseña</label>
+                        <input type="password" id="registro-password" placeholder="Mínimo 6 caracteres" required minlength="6">
+                    </div>
+                    
+                    <button type="submit" class="btn-primario">Crear Cuenta</button>
+                    <p class="cambiar-form">
+                        ¿Ya tienes cuenta? 
+                        <a href="#" id="link-login">Inicia sesión</a>
+                    </p>
+                    <p id="registro-error" class="error-msg"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA 2: LISTA DE TAREAS -->
+    <!-- ============================================ -->
+    <div id="pantalla-tareas" class="pantalla oculto">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Mis Tareas</h2>
+                <p id="nombre-usuario"></p>
+            </div>
+            <button id="btn-logout" class="btn-logout">Cerrar Sesión</button>
+        </aside>
+
+        <main class="contenido-tareas">
+            <header class="header-tareas">
+                <h1>Mis Tareas</h1>
+                <p>Organiza tu día, una tarea a la vez.</p>
+            </header>
+
+            <!-- Formulario para agregar tarea -->
+            <form id="form-tarea" class="form-tarea">
+                <input type="text" id="input-tarea" placeholder="¿Qué necesitas hacer hoy?" required>
+                <button type="submit" class="btn-primario">+ Agregar</button>
+            </form>
+
+            <!-- Lista de tareas -->
+            <div id="lista-tareas" class="lista-tareas">
+                <!-- Aquí JavaScript insertará las tareas dinámicamente -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
